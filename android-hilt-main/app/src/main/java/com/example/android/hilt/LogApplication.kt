@@ -17,13 +17,17 @@
 package com.example.android.hilt
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
+// 컴파일 타임 시 표준 컴포넌트 빌딩에 필요한 클래스들을 초기화를 해줍니다.
+// 따라서 Hilt를 사용하는 모든 앱은 @HiltAndroidApp 이 달린 Application 클래스를 반드시 포함해야 합니다.
+@HiltAndroidApp
 class LogApplication : Application() {
 
-    lateinit var serviceLocator: ServiceLocator
-
-    override fun onCreate() {
-        super.onCreate()
-        serviceLocator = ServiceLocator(applicationContext)
-    }
+//    lateinit var serviceLocator: ServiceLocator
+//
+//    override fun onCreate() {
+//        super.onCreate()
+//        serviceLocator = ServiceLocator(applicationContext)
+//    }
 }
